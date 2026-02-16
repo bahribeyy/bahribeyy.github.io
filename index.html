@@ -1,187 +1,268 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Narin Mobilya ve Tasarım</title>
-
-<style>
-body{
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#111;
-    color:white;
-}
-
-/* HEADER */
-header{
-    padding:20px 50px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#000;
-    border-bottom:1px solid #333;
-}
-
-.logo{
-    font-size:26px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.logo span{
-    font-weight:300;
-    font-size:14px;
-    display:block;
-    color:#aaa;
-}
-
-/* HERO */
-.hero{
-    height:70vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(to right,#000,#1c1c1c);
-}
-
-.hero h1{
-    font-size:48px;
-    margin:0;
-}
-
-.hero p{
-    margin-top:15px;
-    font-size:18px;
-    color:#bbb;
-}
-
-/* PRODUCTS */
-.products{
-    padding:80px 40px;
-    text-align:center;
-}
-
-.products h2{
-    font-size:32px;
-    margin-bottom:50px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.card{
-    background:#1c1c1c;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.6);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-.card h3{
-    padding:20px;
-    margin:0;
-    font-size:20px;
-}
-
-/* ABOUT */
-.about{
-    padding:80px 40px;
-    background:#000;
-    text-align:center;
-}
-
-.about p{
-    max-width:800px;
-    margin:auto;
-    color:#bbb;
-    line-height:1.6;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:20px;
-    background:#000;
-    border-top:1px solid #333;
-    font-size:14px;
-    color:#777;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narin Mobilya ve Tasarım - Özel Mobilya İmalatı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+    </style>
 </head>
+<body class="bg-stone-50 text-stone-800">
 
-<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <h1 class="text-2xl font-bold text-amber-800">Narin Mobilya</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-amber-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Hakkımızda</a>
+                        <a href="#services" class="hover:text-amber-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Hizmetler</a>
+                        <a href="#projects" class="hover:text-amber-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Projeler</a>
+                        <a href="#contact" class="bg-amber-800 text-white hover:bg-amber-900 px-4 py-2 rounded-md text-sm font-medium transition-colors">İletişim</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<header>
-<div class="logo">
-NARİN
-<span>Mobilya & Tasarım</span>
-</div>
-</header>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center parallax" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920');">
+        <div class="text-center text-white px-4 fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Özel Mobilya İmalatı</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light">Mutfak dolapları, yüklükler, vestiyerler ve daha fazlası...<br>Hayalinizdeki mobilyayı gerçeğe dönüştürüyoruz.</p>
+            <a href="#contact" class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">Ücretsiz Keşif Al</a>
+        </div>
+    </section>
 
-<section class="hero">
-<div>
-<h1>Şıklık ve Kalitenin<br>Buluşma Noktası</h1>
-<p>Özel ölçü üretim • Modern tasarım • Uzun ömürlü çözümler</p>
-</div>
-</section>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="slide-in">
+                    <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=800" alt="Marangoz Atölyesi" class="rounded-lg shadow-2xl w-full h-96 object-cover">
+                </div>
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold text-amber-900 mb-6">Ustalık ve Tecrübe</h2>
+                    <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                        2004 yılından beri özel mobilya üretimi yapıyoruz. Her parça, ustalarımızın titiz el işçiliğinin ve yılların birikiminin bir yansımasıdır.
+                    </p>
+                    <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                        Mutfak dolaplarından gardıroplara, vestiyerlerden TV ünitelerine kadar tüm mobilya ihtiyaçlarınızda yanınızdayız. Kaliteli malzeme, özenli işçilik ve müşteri memnuniyeti ilkelerimizdir.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 mt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-800">20+</div>
+                            <div class="text-sm text-stone-500">Yıllık Tecrübe</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-800">500+</div>
+                            <div class="text-sm text-stone-500">Tamamlanan Proje</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-800">100%</div>
+                            <div class="text-sm text-stone-500">Müşteri Memnuniyeti</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="products">
-<h2>Ürünlerimiz</h2>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-amber-900 mb-4">Neler Yapıyoruz?</h2>
+                <p class="text-lg text-stone-600">İhtiyaçlarınıza özel, kaliteli ve şık mobilya çözümleri sunuyoruz.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600" alt="Mutfak Dolapları" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-900 mb-2">Mutfak Dolapları</h3>
+                        <p class="text-stone-600">Modern ve fonksiyonel mutfak çözümleri, özel ölçü ve tasarımlar.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600" alt="Gardırop" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-900 mb-2">Gardırop ve Yüklük</h3>
+                        <p class="text-stone-600">Giyinme odaları, gömme dolaplar ve depolama çözümleri.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600" alt="TV Ünitesi" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-900 mb-2">TV Üniteleri</h3>
+                        <p class="text-stone-600">Salonunuza özel, şık ve kullanışlı TV ünitesi tasarımları.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="grid">
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-amber-900 mb-4">Tamamlanan Projelerimiz</h2>
+                <p class="text-lg text-stone-600">Müşterilerimiz için ürettiğimiz bazı özel projeler.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600" alt="Proje 1" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white text-lg font-semibold">Modern Mutfak</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600" alt="Proje 2" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white text-lg font-semibold">Giyinme Odası</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600" alt="Proje 3" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white text-lg font-semibold">Vestiyer</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600" alt="Proje 4" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white text-lg font-semibold">Banyo Dolabı</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600" alt="Proje 5" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white text-lg font-semibold">Kitaplık</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600" alt="Proje 6" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white text-lg font-semibold">Yatak Odası</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-<h3>Modern Mutfak</h3>
-</div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-stone-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-bold text-amber-400 mb-6">Hayalinizdeki Mobilyayı Konuşalım</h2>
+                    <p class="text-lg text-stone-300 mb-8">Ücretsiz keşif ve fiyat teklifi için bize ulaşın. Size en kısa sürede dönüş yapacağız.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-amber-800 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-stone-400">Email</div>
+                                <div class="text-lg">info@narimmobilya.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-amber-800 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-stone-400">Adres</div>
+                                <div class="text-lg">Mobilyacılar Sitesi, No:123<br>İstanbul, Türkiye</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg p-8 text-stone-800">
+                    <h3 class="text-2xl font-bold text-amber-900 mb-6">Bize Mesaj Gönderin</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-1">Adınız</label>
+                            <input type="text" class="w-full px-4 py-2 border border-stone-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all" placeholder="Adınız Soyadınız">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-1">Telefon</label>
+                            <input type="tel" class="w-full px-4 py-2 border border-stone-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all" placeholder="05XX XXX XX XX">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-1">Mesajınız</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-stone-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all" placeholder="Ne tür bir mobilya istediğinizi kısaca anlatın..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-800 hover:bg-amber-900 text-white font-semibold py-3 rounded-md transition-colors duration-300">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf">
-<h3>Çocuk Odası Ranza</h3>
-</div>
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2024 Narin Mobilya ve Tasarım. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1598300053653-df1f8d8c5d27">
-<h3>Yatak Odası</h3>
-</div>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1582582429416-6c2f6b8b8c6c">
-<h3>Modern Vestiyer</h3>
-</div>
-
-</div>
-</section>
-
-<section class="about">
-<h2>Hakkımızda</h2>
-<p>
-Narin Mobilya ve Tasarım olarak modern ve klasik çizgileri bir araya getiriyoruz.
-Özel ölçü üretim yaparak her mekâna uygun, estetik ve uzun ömürlü çözümler sunuyoruz.
-Kaliteli malzeme, temiz işçilik ve zamanında teslim önceliğimizdir.
-</p>
-</section>
-
-<footer>
-© 2026 Narin Mobilya ve Tasarım
-</footer>
-
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
